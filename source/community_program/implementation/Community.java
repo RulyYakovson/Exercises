@@ -2,10 +2,7 @@ package community_program.implementation;
 
 import community_program.enums.Donation;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Community {
 
@@ -23,12 +20,18 @@ public class Community {
     }
 
     /**
-     * Add member to the community
-     * @param member - The member to add
+     * Add members to the community
+     * @param members - The members to add
      */
-    public void addMember(CommunityMember member) {
-        if (member != null) {
-            communityMembers.add(member);
+    public void addMembers(CommunityMember... members) {
+        for (CommunityMember member : members) {
+            if (member != null) {
+                if (isExist(member.getId())) {
+                    System.out.println(String.format("ID: '%s' already exist", member.getId()));
+                } else {
+                    communityMembers.add(member);
+                }
+            }
         }
     }
 
@@ -47,12 +50,17 @@ public class Community {
 
     /**
      *  Calculates the approved amount that tha given member can get from the community gemach
-     * @param member
-     * @return - The approved amount
+     * @param id
+     * @return - The approved amount or -1 if the member cannot be found
      */
-    public double approvedAmountFromGemach(CommunityMember member) {
+    public double approvedAmountFromGemach(int id) {
+        CommunityMember member = getMemberById(id);
+        if(member != null) {
+
         //TODO
-        return 0;
+            return 999;
+        }
+        return -1;
     }
 
     /**
@@ -80,6 +88,24 @@ public class Community {
         totalVolunteerHours.put(Donation.MUSICAL, mHours);
 
         return totalVolunteerHours;
+    }
+
+    private CommunityMember getMemberById(int id) {
+        for (CommunityMember member : communityMembers) {
+            if (Objects.equals(member.getId(), id)) {
+                return member;
+            }
+        }
+        return null;
+    }
+
+    private Boolean isExist(int id) {
+        for (CommunityMember member : communityMembers) {
+            if(member.getId() == id) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

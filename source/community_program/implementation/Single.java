@@ -41,7 +41,7 @@ public class Single extends CommunityMember {
     }
 
     @Override
-    public double Entitlement() {
+    public double entitlement() {
         //TODO
         return 0;
     }

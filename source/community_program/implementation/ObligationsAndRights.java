@@ -10,9 +10,9 @@ public interface ObligationsAndRights {
     /**
      *
      * @return - Returns the maximum amount that a community member
-     * is entitled to receive from the community "gmach"
+     * is entitled to receive from the community "Gemach"
      */
-    double Entitlement();
+    double entitlement();
 
     /**
      *

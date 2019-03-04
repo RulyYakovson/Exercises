@@ -36,18 +36,49 @@ public class Married extends  CommunityMember {
         setNumOfChildren(numOfChildren);
     }
 
+    /**
+     * Calculates Progressive taxation in terms of gender and number of children.
+     * @return
+     */
     @Override
     public double communityTax() {
         // If the member only studies and does not work ("Torhato umanuto")
         if(getWeeklyWorkHours() == 0) {
             return 0;
         }
-        //TODO
-        return 0;
+        //calculate right points of tax.
+        double points = 0;
+        if(getGender() == Gender.FEMALE) points = 0.5;
+        points += getNumOfChildren();
+        return calculateTax(getIncome(),points);
+    }
+
+    /**
+     * Calculate Progressive taxation -
+     * The higher the income of a member, the higher the tax rate will be imposed on him.
+     * @param income
+     * @param points
+     * @return
+     */
+    double calculateTax(double income, double points){
+
+        double taxProcent = 1.5 - points * 0.2;
+        double tax = 0;
+        double levlOfIncome = 10000;
+
+        //Calculates the tax according to the salary level.
+        int i = 0;
+        while (income > 0 && i < 4){
+            tax += Math.min(income, levlOfIncome)*taxProcent;
+            income -= levlOfIncome;
+            levlOfIncome *= 3/4;
+            taxProcent *= 2;
+        }
+        return income > 0 ? tax += income*taxProcent  : tax;
     }
 
     @Override
-    public double Entitlement() {
+    public double entitlement() {
         //TODO
         return 0;
     }

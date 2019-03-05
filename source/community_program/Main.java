@@ -193,6 +193,7 @@ public class Main {
         int choice = -1;
         while ((choice = Integer.parseInt(reader.next())) != 0 && choice != 1);
         Gender gender = Gender.values()[choice];
+        reader.nextLine();
         System.out.println("Enter name: ");
         String name = reader.nextLine();
         System.out.println("Enter address: ");

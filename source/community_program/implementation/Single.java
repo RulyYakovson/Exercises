@@ -36,20 +36,30 @@ public class Single extends CommunityMember {
         // If the member only studies and does not work ("Torhato umanuto")
         if(getWeeklyWorkHours() == 0) {
             return 0;
-        }//TODO
+        }
+        //calculate right points of tax.
+        double points = 0;
+        if(getGender() == Gender.FEMALE) points += 0.5;
+        return calculateTax(getIncome(),points);
+    }
+
+    /**
+     * single members they do not have permission to get a loan
+     * @return 0;
+     */
+    @Override
+    public double entitlement() {
         return 0;
     }
 
+    /**
+     * get recommended volunteer hours.
+     * by default is 5 hours a week.
+     * @return
+     */
     @Override
-    public double Entitlement() {
-        //TODO
-        return 0;
-    }
-
-    @Override
-    public int recommendedVolunteerHours() {
-        //TODO
-        return 0;
+    public double recommendedVolunteerHours() {
+        return 5;
     }
 
     public double getStudyYears() {

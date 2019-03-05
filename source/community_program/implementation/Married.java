@@ -36,26 +36,44 @@ public class Married extends  CommunityMember {
         setNumOfChildren(numOfChildren);
     }
 
+    /**
+     * Calculates Progressive taxation in terms of gender and number of children.
+     * @return
+     */
     @Override
     public double communityTax() {
         // If the member only studies and does not work ("Torhato umanuto")
         if(getWeeklyWorkHours() == 0) {
             return 0;
         }
-        //TODO
-        return 0;
+        //calculate right points of tax.
+        double points = 0.5; //for marriage
+        if(getGender() == Gender.FEMALE) points += 0.5;
+        points += getNumOfChildren();
+        return calculateTax(getIncome(),points);
     }
 
+    /**
+     * gets the max amount of entitlement to get from the "Gmach"
+     * consider by the income and children.
+     *
+     * Note:
+     * dose not check how much he use the entitlement.
+     * @return
+     */
     @Override
-    public double Entitlement() {
-        //TODO
-        return 0;
+    public double entitlement() {
+        return (getIncome()/10000+1)*5000 + (getNumOfChildren()*500);
     }
 
+    /**
+     * get recommended volunteer hours consider whit num of children.
+     * by default is 5 hours a week.
+     * @return int value of
+     */
     @Override
-    public int recommendedVolunteerHours() {
-        //TODO
-        return 0;
+    public double recommendedVolunteerHours() {
+        return Math.max((int)(5 - getNumOfChildren()*0.5),0);
     }
 
     public int getSpouseId() {

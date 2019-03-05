@@ -12,11 +12,11 @@ public interface ObligationsAndRights {
      * @return - Returns the maximum amount that a community member
      * is entitled to receive from the community "gmach"
      */
-    double Entitlement();
+    double entitlement();
 
     /**
      *
      * @return - Returns the recommended volunteer hours for a community member
      */
-    int recommendedVolunteerHours();
+    double recommendedVolunteerHours();
 }

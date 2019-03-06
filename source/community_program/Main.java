@@ -5,10 +5,10 @@ import community_program.enums.Donation;
 import community_program.enums.Gender;
 import community_program.enums.MemberStatus;
 import community_program.exceptions.NotFullyBusyException;
-import community_program.implementation.Community;
-import community_program.implementation.CommunityMember;
-import community_program.implementation.Married;
-import community_program.implementation.Single;
+import community_program.classes.Community;
+import community_program.classes.CommunityMember;
+import community_program.classes.Married;
+import community_program.classes.Single;
 
 import java.util.Date;
 import java.util.List;
@@ -16,10 +16,15 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Scanner;
 
-
+/**
+ * This program manages a community information system
+ * Created by Israel Yakovson ID: 300190055 and
+ * Yizchak Weiss ID: 204017776
+ * 05/03/2019
+ */
 public class Main {
     public static Scanner reader = new Scanner(System.in);
-    public static Community community = null;
+    public static Community community;
 
     public static void main(String[] args) {
         try {

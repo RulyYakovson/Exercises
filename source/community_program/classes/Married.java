@@ -1,4 +1,4 @@
-package community_program.implementation;
+package community_program.classes;
 
 import community_program.enums.Donation;
 import community_program.enums.Gender;

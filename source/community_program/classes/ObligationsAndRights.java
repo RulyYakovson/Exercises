@@ -1,4 +1,4 @@
-package community_program.implementation;
+package community_program.classes;
 
 public interface ObligationsAndRights {
 

@@ -168,17 +168,17 @@ public abstract class CommunityMember implements ObligationsAndRights {
 
         double taxPercent = 1.5;
         double tax = 0;
-        double levlOfIncome = 10000;
+        double levelOfIncome = 10000;
 
         //Calculates the tax according to the salary level.
         //0: 0 - 10,000. 1: 10,000 - 17,500. 2: 17,500 - 23,125. 3: 23,125 - infinity.
         int i = 0;
         while (income > 0 && i < 3){
-            tax += Math.min(income, levlOfIncome)*(Math.max(taxPercent - points*0.2, 0));
-            income -= levlOfIncome;
-            levlOfIncome *= 3/4;
+            tax += Math.min(income, levelOfIncome)*(Math.max(taxPercent - points*0.2, 0));
+            income -= levelOfIncome;
+            levelOfIncome *= 3/4;
             taxPercent *= 2;
         }
-        return income > 0 ? tax += income*(Math.max(taxPercent - points*0.2, 0))  : tax;
+        return income > 0 ? tax + income*(Math.max(taxPercent - points*0.2, 0)) : tax;
     }
 }

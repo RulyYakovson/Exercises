@@ -23,11 +23,11 @@ public class Community {
      * Add members to the community
      * @param members - The members to add
      */
-    public void addMembers(CommunityMember... members) {
+    public void addMembers(CommunityMember... members) throws IllegalArgumentException {
         for (CommunityMember member : members) {
             if (member != null) {
                 if (isExist(member.getId())) {
-                    System.out.println(String.format("ID: '%s' already exist", member.getId()));
+                    throw new IllegalArgumentException(String.format("ERROR - ID: '%s' already exist", member.getId()));
                 } else {
                     communityMembers.add(member);
                 }
@@ -49,7 +49,7 @@ public class Community {
     }
 
     /**
-     *  Calculates the approved amount that tha given member can get from the community gemach
+     *  Calculates the approved amount that tha given member can get from the community Gemach
      * @param id
      * @return - The approved amount or -1 if the member cannot be found
      */

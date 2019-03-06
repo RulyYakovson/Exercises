@@ -31,6 +31,14 @@ public class Single extends CommunityMember {
         setStudyYears(studyYears);
     }
 
+    public double getStudyYears() {
+        return studyYears;
+    }
+
+    public void setStudyYears(double studyYears) {
+        this.studyYears = studyYears;
+    }
+
     @Override
     public double communityTax() {
         // If the member only studies and does not work ("Torhato umanuto")
@@ -44,7 +52,7 @@ public class Single extends CommunityMember {
     }
 
     /**
-     * single members they do not have permission to get a loan
+     * Single members they do not have permission to get a loan
      * @return 0;
      */
     @Override
@@ -53,21 +61,13 @@ public class Single extends CommunityMember {
     }
 
     /**
-     * get recommended volunteer hours.
+     * Get recommended volunteer hours.
      * by default is 5 hours a week.
      * @return
      */
     @Override
     public double recommendedVolunteerHours() {
         return 5;
-    }
-
-    public double getStudyYears() {
-        return studyYears;
-    }
-
-    public void setStudyYears(double studyYears) {
-        this.studyYears = studyYears;
     }
 
     @Override

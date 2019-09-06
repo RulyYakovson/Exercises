@@ -1,2 +1,2 @@
 # Exercises
-exercises in computer sciences courses
+Exercises in computer sciences courses

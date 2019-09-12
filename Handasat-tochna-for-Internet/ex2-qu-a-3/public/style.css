@@ -1,0 +1,55 @@
+.div-style {
+    text-align: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.form-style input {
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.h-style {
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: xx-large;
+}
+
+.input-style {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.label-style {
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    background-color: gray;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+input[type=reset]:hover {
+    background-color: red;
+}

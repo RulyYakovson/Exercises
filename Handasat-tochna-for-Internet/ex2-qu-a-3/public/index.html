@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body style="margin: 35px">
+        <div class="div-style" style="text-align: center">
+            <h class="h-style">Welcome to the Flower Order Form </h><br/>
+            <div class="div-style">
+                <form class="form-style" method="get" action="flower/order" style="margin-top: 20px">
+                    <div class="div-style" style="width: fit-content">
+                        <div class="div-style">
+                            <label class="label-style">Flower type: </label>
+                            <select style="margin-left: 10px" name="type">
+                                <option label="Aconite" value = "Aconite" selected="selected" />
+                                <option label="Ageratum" value = "Ageratum" />
+                                <option label="Allium" value = "Allium" />
+                                <option label="Anemone" value = "Anemone" />
+                                <option label="Angelica" value = "Angelica" />
+                            </select>
+                        </div>
+                        <div class="div-style">
+
+                            <label class="label-style">Amount: </label>
+                            <input class="input-style" type="number" name="amount"/><br />
+                        </div>
+                        <div class="div-style">
+                            <label class="label-style">Address: </label>
+                            <input class="input-style" type="text" name="address"/><br>
+                        </div>
+                        <div class="div-style">
+                            <label class="label-style">Tel: </label>
+                            <input class="input-style" type="tel" name="tel"/><br/>
+                        </div>
+                        <div class="div-style" style="margin-top: 0px">
+                            <fieldset>
+                                <legend>Package color:</legend>
+                                <input type="radio" name="packageColor" value="Red">Red<br>
+                                <input type="radio" name="packageColor" value="White">White<br>
+                                <input type="radio" name="packageColor" value="Blue">Blue<br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="div-style" style="text-align: center">
+                        <input style="margin-top: 10px" type="submit" />
+                        <input style="margin-top: 10px" type="reset" />
+                    </div>
+                </form>
+                <p style="text-align: center">As you can see, we are just programmers and definitely not designers.</p>
+            </div>
+        </div>
+    </body>
+</html>

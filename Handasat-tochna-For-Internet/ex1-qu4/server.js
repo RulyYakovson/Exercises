@@ -1,4 +1,4 @@
-let express = require('express');
+let express = require('./node_modules/express');
 let path = require("path");
 let app = express();
 app.use(express.static(path.join(__dirname, 'public')));

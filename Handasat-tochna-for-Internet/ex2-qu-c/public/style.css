@@ -26,7 +26,6 @@ input {
 
 button {
     display: inline-block;
-    border-radius: 4px;
     background-color: green;
     color: #FFFFFF;
     text-align: center;
@@ -37,7 +36,7 @@ button {
     cursor: pointer;
     margin-top: 25px;
     border: none;
-    border-radius: 6px;
+    border-radius: 60px;
 }
 
 button span {

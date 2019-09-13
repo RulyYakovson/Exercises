@@ -1,25 +1,26 @@
-let path = require("path");
+let path = require('path');
 let express = require('express');
 let app = express();
-const authenticatedMan = { firstName: 'plony', lastName: 'almony', password: '1234'};
+
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/authntication', function (req, res) {
-    const firstName = req.query.first;
-    const lastName = req.query.last;
-    let approved = false;
-    if (authenticate(req.query)) {
-      approved = true;
-      console.log(approved);
-    }
-    res.send(`Access ${!approved ? 'NOT' : ''} approved for: ${firstName} ${lastName}`);
+app.get('/', function (req, res) {
+    let drinks = [ { name: 'Bloody Mary', drunkness:  3 },
+                 { name: 'Martini',     drunkness:  5 },
+                 { name: 'Scotch',      drunkness: 10 }
+               ];
+    let line = "Any your code that you haven't looked at for few months might have been written by someone else";
+  res.render('index', { drinks: drinks, tagline: line });
+  //res.render('index');
 });
 
-app.listen(8081, function () {
-  console.log('Ex1 qu5 app listening on port 8081!')
+app.get('/about', function(req, res) {
+  res.render('about');
 });
 
-const authenticate = query =>
-  query.first === authenticatedMan.firstName 
-  && query.last === authenticatedMan.lastName 
-  && query.password === authenticatedMan.password;
+app.listen(8080, function () {
+  console.log('Listening on port 8080!');
+});

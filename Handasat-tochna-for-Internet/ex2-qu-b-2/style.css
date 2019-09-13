@@ -10,7 +10,7 @@ div.cardfan img {
   width: 300px; 
   height: 200px; 
   border: 12px solid #ffe; 
-  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2); 
+  box-shadow: 4px 4px 3px 4px rgba(0, 0, 0, 0.2); 
   transform-origin: center 400px; 
   transition: all .6s linear; 
 }

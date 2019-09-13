@@ -1,0 +1,58 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    .nice {
+      position:absolute;
+      top:200px;
+      height:200px;
+      width:100px;
+      height:100px;
+      background-color:orange;
+    }
+  </style>
+  <script>
+    function change() {
+      let element = document.getElementById("test");
+      element.innerText = "שלום עולם";
+      element.style.backgroundColor = "green";
+    }
+    let flag = confirm("Debug alerts?");
+    let Person = function (name, birthdate) {
+      if (flag) alert("Person: bitrh year = " + birthdate.getFullYear());
+      this.name = name;
+      this.birthdate = birthdate;
+      this.age = function () {
+      return ((new Date() - this.birthdate)/ (1000*3600*24*365)); // from ms to years
+    }
+  };
+  let p = new Person("dani",new Date("1/1/1991"));
+  document.write(" Person Name is: " + p.name + "<br>");
+  document.write(" Person Age is: " + Math.floor(p.age()));
+  
+  function student(name, birthdate, subject) {
+    // Call the parent constructor, making sure (using Function#call)
+    // that "this" is set correctly during the call
+    Person.call(this, name, birthdate);
+    // Initialize our Student-specific properties
+    this.subject = subject;
+  }
+
+  student.prototype = Object.create(Person.prototype); 
+  // Set the "constructor" property to refer to Student
+  student.prototype.constructor = student;
+
+  let name1 = prompt("Please enter student's name ", "");
+  let student1 = new student(name1, new Date("2/2/1992"), "Psychology");
+  alert("Student name: " + student1.name +
+      "\nStudent age:  " + student1.age() + 
+      "\nStudent's subject: " + student1.subject +
+      "\ninstance of student: " + (student1 instanceof student) +
+      "\ninstance of person: " + (student1 instanceof Person));
+
+</script>
+</head>
+<body onload="change()">
+  <div class="nice" id="test"> hello world </div>
+</body>
+</html>

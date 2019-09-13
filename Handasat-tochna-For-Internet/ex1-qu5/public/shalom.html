@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="PSPad editor, www.pspad.com">
+    <title></title>
+    <style>
+      .nice {
+        position:absolute;
+        top:200px;
+        height:200px;
+        width:100px;
+        height:100px;
+        background-color:orange;
+      }
+
+    </style>
+    <script>
+      function change() {
+        let element = document.getElementById("test");
+        element.innerText = "SHALOM OLAM";
+        element.style.backgroundColor = "green";
+      }
+    </script>
+  </head>
+  <body onload="change()">
+      <div class="nice" id="test"> hello world </div>
+  </body>
+</html>

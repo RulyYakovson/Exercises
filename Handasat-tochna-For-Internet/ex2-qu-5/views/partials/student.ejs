@@ -1,25 +1,10 @@
+<!DOCTYPE html>
 <html>
-    <!-- <link href="public/style.css" rel="stylesheet" type="text/css"> -->
-    <title>Student</title>
     <body>
-<table>
-    <tr>
-    <th>
-        <%=firstName %>
-    </th>
-</tr>
-<tr>
-
-    <th>
-        <%=lastName %>
-    </th>
-</tr>
-<tr>
-
-    <th>
-        <%=id %>
-    </th>
-</tr>
-</table>
-</body>
+        <div class="card">
+            <h1><%= students[i].name %></h1>
+            <p class="title"><%= students[i].course %></p>
+            <p><%= students[i].university %></p>
+        </div>
+    </body>
 </html>

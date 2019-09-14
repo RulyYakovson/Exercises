@@ -17,19 +17,20 @@ app.get('/', function (req, res) {
                  { name: 'Martini',     drunkness:  5 },
                  { name: 'Scotch',      drunkness: 10 }
                ];
-let students = [ {firstName: "אברהם", lastName: "לוי" , id: "1234"},
-               {firstName: "יצחק",lastName: "שמון", id: "4567"},
-             {firstName: "יהודה",lastName: "סלמון", id: "7896"},
-             {firstName: "חיים",lastName: "ישראל", id: "2589"},
-             {firstName: "שמעון",lastName: "מועלם", id: "7896"},
-             {firstName: "תנחום",lastName: "רבינוביץ", id: "2541"},
-             {firstName: "ישראל",lastName: "גבריאלוב", id: "2368"},
-             {firstName: "נחמן",lastName: "מליק", id: "8732"},
-             {firstName: "אריאל",lastName: "רבין", id: "2574"},
-             {firstName: "אהרון",lastName: "גרין", id: "9713"}];
-    let line = "Any your code that you haven't looked at for few months might have been written by someone else";
-  res.render('index', { drinks: drinks, tagline: line, students: students });
-  //res.render('index');
+let students = [ 
+  {name: "Haim Stein", university: "Machon Lev" , course: "Computer Siences"},
+  {name: "Avi Stern", university: "Tel Aviv" , course: "Computer Siences"},
+  {name: "Yossi Gorli", university: "Machon Lev" , course: "Computer Siences"},
+  {name: "Ruli Yakov", university: "Tel Aviv" , course: "Grass Siences"},
+  {name: "Noa Leshes", university: "Machon Lev" , course: "Some other"},
+  {name: "Yael Nisel", university: "Haifa" , course: "Grass Siences"},
+  {name: "Meir Marga", university: "Tel Aviv" , course: "Helth Siences"},
+  {name: "Neria Yolo", university: "Machon Lev" , course: "Computer Siences"},
+  {name: "Simcha Stein", university: "Haifa" , course: "Computer Siences"},
+  {name: "Dani Zilber", university: "Tel Aviv" , course: "Some other"},
+  {name: "Haim Stein", university: "Haifa" , course: "Helth Siences"},
+]
+  res.render('index', { students: students });
 });
 
 app.get('/about', function(req, res) {

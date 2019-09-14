@@ -9,21 +9,24 @@
         <% include partials/header %>
     </header>
     <main>
-        <table id=studentTable>
-            <tr>
-                <% for(var i = 0;i < (students.length/5)+1 ;i++){ %>
-                   <tr>
-                    <% for(var j = i*5;j < 5;j++) { %>
-                        <% if(j < students.length) { %>
-                        <th ><%- include("partials/student.ejs", 
-                            {firstName: students[j].firstName,
-                            lastName: students[j].lastName,
-                                 id: students[j].id} ) %></th>
+            <table class="table">
+                <span class="table-span-style">
+                    Students details
+                </span>
+                <tbody>
+                    <% for(let i = 0; i < students.length; i++) { %>
+                        <% if(i % 4 === 0) { %>
+                            <tr>
                         <% } %>
-                   <% } %>
-                    </tr>
-                <% } %>
-        </table>
+                        <td>
+                            <% include partials/student %>
+                        </td>
+                        <% if(i % 4 === 3) { %>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
     </main>
     <footer>
         <% include partials/footer %>
